@@ -44,7 +44,22 @@ To run the notebook:
     ```bash
     pip install -r requirements.txt
 
-4. **Launch the notebook**
+4. **Run the project (Python version)**
+
+	If you want to execute the full pipeline from the command line:
+    ```bash
+    python -m src.main \
+  		--csv data/raw/fetal_health.csv \
+  		--model rf \
+  		--resample none \
+  		--save models/fetal_health_model.joblib \
+  		--report results/classification_report.txt
+    ```
+	You can change the model type (rf, ada, logreg, svc) or try different resampling methods (none, random, smote, adasyn).
+
+5. **(Optional) Run the notebook version**
+
+	If you prefer to explore the results interactively:
     ```bash
     jupyter notebook fetal_health_classifier.ipynb
 
